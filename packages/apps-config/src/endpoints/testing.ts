@@ -16,6 +16,13 @@ export function createTesting (t: TFunction): LinkOption[] {
   return [
     // polkadot test relays
     createRococo(t),
+    {
+      dnslink: 'uniarts',
+      info: 'uniarts',
+      text: t('rpc.uniarts', 'Uni-Arts', { ns: 'apps-config' }),
+      textBy: t('rpc.hosted.by', 'hosted by {{host}}', { ns: 'apps-config', replace: { host: 'Uni-Arts' } }),
+      value: 'wss://testnet.uniarts.me'
+    },
     // alphabetical based on chain name
     {
       info: 'centrifuge',

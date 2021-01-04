@@ -44,7 +44,10 @@ export function createIdenticon ({ info, text, value }: Option, overrides: strin
   const theme = info && overrides.includes(info)
     ? override as 'empty'
     : info as 'substrate';
-
+  console.log('----------------------------------------------------------------');
+  console.log(info, text, value);
+  console.log(theme);
+  console.log('----------------------------------------------------------------');
   return {
     text: (
       <div

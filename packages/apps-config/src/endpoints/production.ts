@@ -14,6 +14,13 @@ export function createProduction (t: TFunction): LinkOption[] {
   return [
     // fixed, polkadot
     {
+      dnslink: 'uniarts',
+      info: 'uniarts',
+      text: t('rpc.uniarts', 'Uni-Arts', { ns: 'apps-config' }),
+      textBy: t('rpc.hosted.by', 'hosted by {{host}}', { ns: 'apps-config', replace: { host: 'Uni-Arts' } }),
+      value: 'wss://testnet.uniarts.me'
+    },
+    {
       dnslink: 'polkadot',
       info: 'polkadot',
       text: t('rpc.polkadot.parity', 'Polkadot', { ns: 'apps-config' }),
