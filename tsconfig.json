@@ -12,6 +12,8 @@
       "@polkadot/apps": ["packages/apps/src"],
       "@polkadot/apps-config": [ "packages/apps-config/src" ],
       "@polkadot/apps-config/*": [ "packages/apps-config/src/*" ],
+      "@uniarts/networks": [ "packages/apps-networks/src" ],
+      "@uniarts/networks/*": [ "packages/apps-networks/src/*" ],
       "@polkadot/apps-routing": [ "packages/apps-routing/src" ],
       "@polkadot/apps-routing/*": [ "packages/apps-routing/src/*" ],
       "@polkadot/app-accounts": [ "packages/page-accounts/src" ],
@@ -78,7 +80,7 @@
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@polkadot/ts",
-      "./node_modules/@types"
+      "./node_modules/@types",
     ]
   }
 }

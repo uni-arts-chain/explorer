@@ -2130,6 +2130,7 @@ __metadata:
     "@polkadot/networks": ^5.2.3
     "@sora-substrate/type-definitions": ^0.3.1
     "@subsocial/types": ^0.4.27
+    "@uniarts/networks": ^0.0.4
     i18next: ^19.8.4
     moonbeam-types-bundle: ^1.0.1
   languageName: unknown
@@ -2380,7 +2381,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polkadot/networks@npm:^5.2.3":
+"@polkadot/networks@npm:5.2.3, @polkadot/networks@npm:^5.2.2, @polkadot/networks@npm:^5.2.3":
   version: 5.2.3
   resolution: "@polkadot/networks@npm:5.2.3"
   dependencies:
@@ -2735,6 +2736,17 @@ __metadata:
     "@polkadot/util": "*"
     "@polkadot/x-randomvalues": "*"
   checksum: a7b3d029d88669ea9775c8cfe166a44a06ba243283c03fa0547bf4c6144c5440260a0bd1a6acc9c67b57ab707c406d681a2e52af5e7da3ebe8bb4fdeff071c66
+  languageName: node
+  linkType: hard
+
+"@polkadot/x-fetch@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "@polkadot/x-fetch@npm:3.7.1"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    "@types/node-fetch": ^2.5.7
+    node-fetch: ^2.6.1
+  checksum: a3cff72f1ee1b78ed9a970b4d245e0c6e540e3f0a10b9cf844a2a4f5c0439a3bd26bb2a13226add9645b26b82ce2f8be435b36a2e1c6343cb2d7de47b34bb1ad
   languageName: node
   linkType: hard
 
@@ -3680,6 +3692,16 @@ __metadata:
   checksum: 982f17fcde2be37bf39bca4da3bf4d8e3dbdaf49279b31827d39c51f1f3041be7c2224c3632489d1ee97c24d42907908f927ed5ea7cfac50b47dbd83e0cbc899
   languageName: node
   linkType: hard
+
+"@uniarts/networks@^0.0.4, @uniarts/networks@workspace:packages/apps-networks":
+  version: 0.0.0-use.local
+  resolution: "@uniarts/networks@workspace:packages/apps-networks"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    "@polkadot/util": ^3.7.1
+    "@polkadot/x-fetch": ^3.7.1
+  languageName: unknown
+  linkType: soft
 
 "@vue/component-compiler-utils@npm:^3.2.0":
   version: 3.2.0

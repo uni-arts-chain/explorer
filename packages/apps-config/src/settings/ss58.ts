@@ -4,13 +4,13 @@
 import type { TFunction } from 'i18next';
 import type { Option } from './types';
 
-import known from '@polkadot/networks';
+import known from '@uniarts/networks';
 
 // Definitions here are with the following values -
 //   info: the name of a logo as defined in ../logos, specifically in namedLogos
 //   text: The text you wish to display in the dropdown
 //   value: The actual ss5Format value (as registered)
-
+console.log(known)
 export function createSs58 (t: TFunction): Option[] {
   return [
     {

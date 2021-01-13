@@ -15,10 +15,16 @@ export default {
   ReasonIndex: 'u32',
   LottoIndex: 'u32',
   LotteryKind: {
-    _enum: ['Routine', 'TreasuryFunded(ReasonIndex)']
+    _enum: [
+      'Routine',
+      'TreasuryFunded(ReasonIndex)'
+    ]
   },
   LottoResult: {
-    _enum: ['Routine(AccountId, Balance)', 'TreasuryFunded(Balance)']
+    _enum: [
+      'Routine(AccountId, Balance)',
+      'TreasuryFunded(Balance)'
+    ]
   },
   Lottery: {
     round: 'LottoIndex',
@@ -40,10 +46,18 @@ export default {
     total_supply: 'Balance'
   },
   OrderType: {
-    _enum: ['Buy', 'Sell']
+    _enum: [
+      'Buy',
+      'Sell'
+    ]
   },
   OrderStatus: {
-    _enum: ['Created', 'PartialFilled', 'Filled', 'Canceled']
+    _enum: [
+      'Created',
+      'PartialFilled',
+      'Filled',
+      'Canceled'
+    ]
   },
   TradePair: {
     hash: 'H256',
@@ -113,7 +127,10 @@ export default {
     amount: 'u64'
   },
   AccessMode: {
-    _enum: ['Normal', 'WhiteList']
+    _enum: [
+      'Normal',
+      'WhiteList'
+    ]
   },
   SaleOrder: {
     collection_id: 'u64',
@@ -161,6 +178,24 @@ export default {
     OffchainSchema: 'Vec<u8>',
     Sponsor: 'AccountId',
     UnconfirmedSponsor: 'AccountId'
+  },
+  Auction: {
+    id: 'u64',
+    collection_id: 'u64',
+    item_id: 'u64',
+    value: 'u64',
+    owner: 'AccountId',
+    start_price: 'u64',
+    increment: 'u64',
+    current_price: 'u64',
+    start_time: 'BlockNumber',
+    end_time: 'BlockNumber'
+  },
+  BidHistory: {
+    auction_id: 'u64',
+    bidder: 'AccountId',
+    bid_price: 'u64',
+    bid_time: 'BlockNumber'
   },
   Pool: {
     id: 'Id',
