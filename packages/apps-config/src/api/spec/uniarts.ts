@@ -15,17 +15,14 @@ export default {
   Value: 'Vec<u8>',
   ReasonIndex: 'u32',
   LottoIndex: 'u32',
+  MemberId: 'u64',
+  ProposalId: 'u64',
+  TokenBalance: 'Balance',
   LotteryKind: {
-    _enum: {
-      Routine: 'Null',
-      TreasuryFunded: 'ReasonIndex'
-    }
+    _enum: ['Routine', 'TreasuryFunded(ReasonIndex)']
   },
   LottoResult: {
-    _enum: {
-      Routine: '(AccountId, Balance)',
-      TreasuryFunded: 'Balance'
-    }
+    _enum: ['Routine(AccountId, Balance)', 'TreasuryFunded(Balance)']
   },
   Lottery: {
     round: 'LottoIndex',
@@ -34,8 +31,24 @@ export default {
     next_ticket_id: 'u32',
     players: 'BTreeMap<AccountId, bool>',
     tickets: 'BTreeMap<u32, AccountId>',
-    result: 'Option<LottoResult>'
+    result: 'Option<LottoResult<AccountId, Balance>>'
   },
+  CurrencyId: {
+    _enum: {
+      Native: 'Null',
+      UINK: 'Null',
+      DOT: 'Null',
+      KSM: 'Null',
+      ETH: 'Null',
+      Token: 'TokenSymbol'
+    }
+  },
+  TokenSymbol: {
+    _enum: ['USDT', 'DAI']
+  },
+  CurrencyIdOf: 'CurrencyId',
+  Amount: 'i128',
+  AmountOf: 'Amount',
   NameData: {
     value: 'Value',
     owner: 'AccountId',
@@ -113,7 +126,8 @@ export default {
   FungibleItemType: {
     Collection: 'u64',
     Owner: 'AccountId',
-    value: 'u128'
+    value: 'u128',
+    item_hash: 'H160'
   },
   ApprovePermissions: {
     approved: 'AccountId',
@@ -129,10 +143,18 @@ export default {
     owner: 'AccountId',
     price: 'u64'
   },
+  SplitSaleOrder: {
+    collection_id: 'u64',
+    item_id: 'u64',
+    value: 'u64',
+    owner: 'AccountId',
+    price: 'u64'
+  },
   SaleOrderHistory: {
     collection_id: 'u64',
     item_id: 'u64',
     value: 'u64',
+    balance: 'u64',
     seller: 'AccountId',
     buyer: 'AccountId',
     price: 'u64',
@@ -153,8 +175,9 @@ export default {
   },
   ReFungibleItemType: {
     Collection: 'u64',
-    Owner: 'Vec<Ownership>',
-    Data: 'Vec<u8>'
+    Owner: 'Vec<Ownership<AccountId>>',
+    Data: 'Vec<u8>',
+    item_hash: 'H160'
   },
   CollectionType: {
     Owner: 'AccountId',
@@ -199,5 +222,17 @@ export default {
     amount: 'Balance',
     reward: 'Balance',
     debt: 'Balance'
+  },
+  Limits: {
+    max_tx_value: 'u128',
+    day_max_limit: 'u128',
+    day_max_limit_for_one_address: 'u128',
+    max_pending_tx_limit: 'u128',
+    min_tx_value: 'u128'
+  },
+  Royalty: {
+    owner: 'AccountId',
+    rate: 'u64',
+    expired_at: 'BlockNumber'
   }
 };
