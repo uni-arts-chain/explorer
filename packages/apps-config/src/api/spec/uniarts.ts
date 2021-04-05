@@ -19,10 +19,16 @@ export default {
   ProposalId: 'u64',
   TokenBalance: 'Balance',
   LotteryKind: {
-    _enum: ['Routine', 'TreasuryFunded(ReasonIndex)']
+    _enum: [
+      'Routine',
+      'TreasuryFunded(ReasonIndex)'
+    ]
   },
   LottoResult: {
-    _enum: ['Routine(AccountId, Balance)', 'TreasuryFunded(Balance)']
+    _enum: [
+      'Routine(AccountId, Balance)',
+      'TreasuryFunded(Balance)'
+    ]
   },
   Lottery: {
     round: 'LottoIndex',
@@ -44,7 +50,10 @@ export default {
     }
   },
   TokenSymbol: {
-    _enum: ['USDT', 'DAI']
+    _enum: [
+      'USDT',
+      'DAI'
+    ]
   },
   CurrencyIdOf: 'CurrencyId',
   Amount: 'i128',
@@ -60,10 +69,18 @@ export default {
     total_supply: 'Balance'
   },
   OrderType: {
-    _enum: ['Buy', 'Sell']
+    _enum: [
+      'Buy',
+      'Sell'
+    ]
   },
   OrderStatus: {
-    _enum: ['Created', 'PartialFilled', 'Filled', 'Canceled']
+    _enum: [
+      'Created',
+      'PartialFilled',
+      'Filled',
+      'Canceled'
+    ]
   },
   TradePair: {
     hash: 'H256',
@@ -134,7 +151,10 @@ export default {
     amount: 'u64'
   },
   AccessMode: {
-    _enum: ['Normal', 'WhiteList']
+    _enum: [
+      'Normal',
+      'WhiteList'
+    ]
   },
   SaleOrder: {
     collection_id: 'u64',
@@ -234,5 +254,22 @@ export default {
     owner: 'AccountId',
     rate: 'u64',
     expired_at: 'BlockNumber'
+  },
+  NftCard: {
+    collection_id: 'u64',
+    item_id: 'u64',
+    value: 'u64'
+  },
+  BlindBox: {
+    id: 'u64',
+    owner: 'AccountId',
+    card_group: 'Vec<NftCard>',
+    total_count: 'u64',
+    remaind_card_group: 'Vec<NftCard>',
+    remaind_count: 'u64',
+    price: 'u64',
+    start_time: 'BlockNumber',
+    end_time: 'BlockNumber',
+    has_ended: 'bool'
   }
 };
