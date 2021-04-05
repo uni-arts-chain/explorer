@@ -62,9 +62,9 @@ spec:
   ports:
   - name: port
     port: 80
-    targetPort: 80  
+    targetPort: 80
   selector:
-    app: uni-arts-explorer          
+    app: uni-arts-explorer
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
@@ -74,7 +74,7 @@ metadata:
     #nginx.org/websocket-services: "ws-explorer"
     #nginx.ingress.kubernetes.io/auth-method: 'POST'
     nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
-spec: 
+spec:
   tls:
   - hosts:
     - explorer.uniarts.me
@@ -86,4 +86,4 @@ spec:
       - path: /
         backend:
           serviceName: uni-arts-explorer
-          servicePort: 80           
+          servicePort: 80

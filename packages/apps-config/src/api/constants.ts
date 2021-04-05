@@ -1,11 +1,12 @@
 // Copyright 2017-2021 @polkadot/app-accounts authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
+import networks from '@uniarts/networks';
 import BN from 'bn.js';
 
-import networks from '@polkadot/networks';
 import { assert } from '@polkadot/util';
 
+console.log(networks)
 function getGenesis (name: string): string {
   const network = networks.find(({ network }) => network === name);
 
@@ -14,11 +15,11 @@ function getGenesis (name: string): string {
   return network.genesisHash[0];
 }
 
+export const KULUPU_GENESIS = getGenesis('kulupu');
+
 export const KUSAMA_GENESIS = getGenesis('kusama');
 
 export const POLKADOT_GENESIS = getGenesis('polkadot');
 export const POLKADOT_DENOM_BLOCK = new BN(1248328);
 
-export const KULUPU_GENESIS = getGenesis('kulupu');
-
-export const DOCK_GENESIS = getGenesis('dock-mainnet');
+export const ROCOCO_GENESIS = '0x47381ee0697153d64404fc578392c8fd5cba9073391908f46c888498415647bd';

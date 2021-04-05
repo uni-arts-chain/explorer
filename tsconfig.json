@@ -12,12 +12,16 @@
       "@polkadot/apps": ["packages/apps/src"],
       "@polkadot/apps-config": [ "packages/apps-config/src" ],
       "@polkadot/apps-config/*": [ "packages/apps-config/src/*" ],
+      "@uniarts/networks": [ "packages/apps-networks/src" ],
+      "@uniarts/networks/*": [ "packages/apps-networks/src/*" ],
       "@polkadot/apps-routing": [ "packages/apps-routing/src" ],
       "@polkadot/apps-routing/*": [ "packages/apps-routing/src/*" ],
       "@polkadot/app-accounts": [ "packages/page-accounts/src" ],
       "@polkadot/app-accounts/*": [ "packages/page-accounts/src/*" ],
       "@polkadot/app-addresses": [ "packages/page-addresses/src" ],
       "@polkadot/app-addresses/*": [ "packages/page-addresses/src/*" ],
+      "@polkadot/app-assets": [ "packages/page-assets/src" ],
+      "@polkadot/app-assets/*": [ "packages/page-assets/src/*" ],
       "@polkadot/app-bounties": [ "packages/page-bounties/src" ],
       "@polkadot/app-bounties/*": [ "packages/page-bounties/src/*" ],
       "@polkadot/app-calendar": [ "packages/page-calendar/src" ],
@@ -34,6 +38,8 @@
       "@polkadot/app-extrinsics/*": [ "packages/page-extrinsics/src/*" ],
       "@polkadot/app-explorer": [ "packages/page-explorer/src" ],
       "@polkadot/app-explorer/*": [ "packages/page-explorer/src/*" ],
+      "@polkadot/app-gilt": [ "packages/page-gilt/src" ],
+      "@polkadot/app-gilt/*": [ "packages/page-gilt/src/*" ],
       "@polkadot/app-i18n": [ "packages/page-i18n/src" ],
       "@polkadot/app-i18n/*": [ "packages/page-i18n/src/*" ],
       "@polkadot/app-js": [ "packages/page-js/src" ],
@@ -78,7 +84,7 @@
     "skipLibCheck": true,
     "typeRoots": [
       "./node_modules/@polkadot/ts",
-      "./node_modules/@types"
+      "./node_modules/@types",
     ]
   }
 }

@@ -4,7 +4,6 @@
 import type { TFunction } from 'i18next';
 import type { LinkOption } from '../settings/types';
 
-import { createRococo } from './testingRococo';
 import { expandEndpoints } from './util';
 
 /* eslint-disable sort-keys */
@@ -17,9 +16,7 @@ import { expandEndpoints } from './util';
 
 export function createTesting (t: TFunction): LinkOption[] {
   return expandEndpoints(t, [
-    // polkadot test relays
-    createRococo(t),
-    // alphabetical based on chain name
+    // alphabetical based on chain name, e.g. Amber, Arcadia, Beresheet, ...
     {
       info: 'centrifuge',
       text: t('rpc.amber', 'Amber', { ns: 'apps-config' }),
@@ -42,6 +39,13 @@ export function createTesting (t: TFunction): LinkOption[] {
       }
     },
     {
+      info: 'bitcountry',
+      text: t('rpc.bitcountry', 'Bit.Country Tewai', { ns: 'apps-config' }),
+      providers: {
+        'Bit.Country': 'wss://whenua.bit.country'
+      }
+    },
+    {
       info: 'bifrost',
       text: t('rpc.bifrost', 'Bifrost Asgard', { ns: 'apps-config' }),
       providers: {
@@ -56,25 +60,47 @@ export function createTesting (t: TFunction): LinkOption[] {
       }
     },
     {
-      info: 'crust',
-      text: t('rpc.crust.network', 'Crust Maxwell CC2', { ns: 'apps-config' }),
+      info: 'clover',
+      text: t('rpc.clover.finance', 'Clover', { ns: 'apps-config' }),
       providers: {
-        'Crust Network': 'wss://api.crust.network/'
+        Clover: 'wss://api.clover.finance/'
+      }
+    },
+    {
+      info: 'crust',
+      text: t('rpc.crust.network', 'Crust Maxwell', { ns: 'apps-config' }),
+      providers: {
+        'Crust Network': 'wss://api.crust.network/',
+        'DCloud Foundation': 'wss://api.decloudf.com/'
       }
     },
     {
       info: 'datahighway',
       isDisabled: true,
-      text: t('rpc.datahighway.harbour', 'Harbour', { ns: 'apps-config' }),
+      text: t('rpc.datahighway.spreehafen', 'Spreehafen', { ns: 'apps-config' }),
       providers: {
-        MXC: 'wss://testnet-harbour.datahighway.com'
+        MXC: 'wss://spreehafen.datahighway.com'
       }
     },
     {
       info: 'dock-testnet',
-      text: t('rpc.dock-testnet', 'Dock Testnet', { ns: 'apps-config' }),
+      text: t('rpc.dock-testnet', 'Dock', { ns: 'apps-config' }),
       providers: {
         'Dock Association': 'wss://danforth-1.dock.io'
+      }
+    },
+    {
+      info: 'dotmog',
+      text: t('rpc.dotmog', 'DOTMog', { ns: 'apps-config' }),
+      providers: {
+        DOTMog: 'wss://mogiway-01.dotmog.com'
+      }
+    },
+    {
+      info: 'phoenix',
+      text: t('rpc.phoenix', 'Phoenix Mashnet', { ns: 'apps-config' }),
+      providers: {
+        'phoenix Protocol': 'wss://phoenix-ws.coinid.pro/'
       }
     },
     {
@@ -100,9 +126,9 @@ export function createTesting (t: TFunction): LinkOption[] {
     },
     {
       info: 'equilibrium',
-      text: t('rpc.equilibriumtestnet', 'Equilibrium Testnet', { ns: 'apps-config' }),
+      text: t('rpc.equilibriumtestnet', 'Equilibrium', { ns: 'apps-config' }),
       providers: {
-        Equilibrium: 'wss://api.mvp.testnet.equilibrium.io'
+        Equilibrium: 'wss://testnet.equilibrium.io'
       }
     },
     {
@@ -114,45 +140,48 @@ export function createTesting (t: TFunction): LinkOption[] {
     },
     {
       info: 'galois',
-      isDisabled: true, // cannot construct AccountServiceEnum
       text: t('rpc.galois', 'Galois', { ns: 'apps-config' }),
       providers: {
-        MathWallet: 'wss://galois.maiziqianbao.net/ws'
+        MathWallet: 'wss://galois-hk.maiziqianbao.net/ws',
+        'MathWallet Backup': 'wss://galois.maiziqianbao.net/ws'
       }
     },
     {
       info: 'jupiter',
       text: t('rpc.jupiter', 'Jupiter', { ns: 'apps-config' }),
       providers: {
-        Elara: 'wss://jupiter.elara.patract.io'
-      }
-    },
-    {
-      info: 'jupiter',
-      text: t('rpc.jupiter', 'Jupiter', { ns: 'apps-config' }),
-      providers: {
-        Patract: 'wss://ws.jupiter.patract.cn'
+        Elara: 'wss://jupiter-poa.elara.patract.io',
+        Patract: 'wss://ws.jupiter-poa.patract.cn'
       }
     },
     {
       info: 'acala',
       text: t('rpc.mandala', 'Mandala', { ns: 'apps-config' }),
       providers: {
-        Acala: 'wss://node-6714447553211260928.rz.onfinality.io/ws'
+        Acala: 'wss://acala-mandala.api.onfinality.io/public-ws',
+        'Patract Elara': 'wss://mandala.elara.patract.io'
       }
     },
     {
       info: 'kilt',
-      text: t('rpc.kilt', 'Mashnet', { ns: 'apps-config' }),
+      text: t('rpc.kilt', 'KILT Mashnet', { ns: 'apps-config' }),
       providers: {
         'KILT Protocol': 'wss://full-nodes.kilt.io:9944/'
+      }
+    },
+    {
+      info: 'litentry',
+      text: t('rpc.litentry.test', 'Litentry Testnet', { ns: 'apps-config' }),
+      providers: {
+        Litentry: 'wss://testnet.litentry.io'
       }
     },
     {
       info: 'moonbaseAlpha',
       text: t('rpc.moonbeam', 'Moonbase Alpha', { ns: 'apps-config' }),
       providers: {
-        'Moonbeam Network': 'wss://wss.testnet.moonbeam.network'
+        'Moonbeam Network': 'wss://wss.testnet.moonbeam.network',
+        OnFinality: 'wss://moonbeam-alpha.api.onfinality.io/public-ws'
       }
     },
     {
@@ -173,14 +202,21 @@ export function createTesting (t: TFunction): LinkOption[] {
       info: 'polkabtc',
       text: t('rpc.polkabtc', 'PolkaBTC', { ns: 'apps-config' }),
       providers: {
-        Interlay: 'wss://alpha.polkabtc.io/api/parachain'
+        Interlay: 'wss://beta.polkabtc.io/api/parachain'
       }
     },
     {
-      info: 'laminar',
-      text: t('rpc.turbulence', 'Turbulence', { ns: 'apps-config' }),
+      info: 'realis',
+      text: t('rpc.realis', 'Realis.Network', { ns: 'apps-config' }),
       providers: {
-        Laminar: 'wss://testnet-node-1.laminar-chain.laminar.one/ws'
+        'Realis.Network': 'wss://rpc.realis.network/'
+      }
+    },
+    {
+      info: 'sgc',
+      text: t('rpc.sgc', 'Sgc', { ns: 'apps-config' }),
+      providers: {
+        SGC: 'wss://substrate.org.cn:4443'
       }
     },
     {
@@ -191,18 +227,68 @@ export function createTesting (t: TFunction): LinkOption[] {
       }
     },
     {
+      info: 'ternoa-chaos',
+      text: t('rpc.ternoa-chaos', 'Ternoa Chaos', { ns: 'apps-config' }),
+      providers: {
+        CapsuleCorp: 'wss://chaos.ternoa.com'
+      }
+    },
+    {
+      info: 'laminar',
+      text: t('rpc.turbulence', 'Turbulence', { ns: 'apps-config' }),
+      providers: {
+        Laminar: 'wss://testnet-node-1.laminar-chain.laminar.one/ws'
+      }
+    },
+    {
+      info: 'uniarts',
+      text: t('rpc.uniarts', 'Uniarts', { ns: 'apps-config' }),
+      providers: {
+        Uniarts: 'wss://testnet.uniarts.me'
+      }
+    },
+    {
+      info: 'unique',
+      text: t('rpc.unique', 'Unique', { ns: 'apps-config' }),
+      providers: {
+        Unique: 'wss://testnet2.uniquenetwork.io'
+      }
+    },
+    {
+      info: 'vln',
+      text: t('rpc.vln', 'Valiu Liquidity Network', { ns: 'apps-config' }),
+      providers: {
+        Valiu: 'wss://vln.valiu.dev'
+      }
+    },
+    {
       dnslink: 'westend',
       info: 'westend',
       text: t('rpc.westend', 'Westend', { ns: 'apps-config' }),
       providers: {
-        Parity: 'wss://westend-rpc.polkadot.io'
+        Parity: 'wss://westend-rpc.polkadot.io',
+        'NodeFactory(Vedran)': 'wss://westend.vedran.nodefactory.io/ws'
+      }
+    },
+    {
+      info: 'zeitgeist',
+      text: t('rpc.zeitgeist', 'Zeitgeist Battery Park', { ns: 'apps-config' }),
+      providers: {
+        Zeitgeist: 'wss://bp-rpc.zeitgeist.pm'
       }
     },
     {
       info: 'zero',
       text: t('rpc.zero', 'Zero', { ns: 'apps-config' }),
       providers: {
-        ZERO: 'wss://alphaville-0.zero.io'
+        ZERO: 'wss://alphaville.zero.io'
+      }
+    },
+    {
+      info: 'mybank',
+      text: t('rpc.mybank', 'mybank.network', { ns: 'apps-config' }),
+      providers: {
+        MYBANK: 'wss://app.mybank.network/substrate'
       }
     },
     {
