@@ -1,0 +1,89 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-config
+data:
+  env-config.js: |
+    window.process_env = {
+      WS_URL: ws://testnet.uniarts.me
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uni-arts-explorer
+  labels:
+    app: uni-arts-explorer
+spec:
+  strategy:
+    type: RollingUpdate
+  replicas: 1
+  selector:
+    matchLabels:
+      name: uni-arts-explorer
+  template:
+    metadata:
+      name:  uni-arts-explorer
+      labels:
+        app: uni-arts-explorer
+        name: uni-arts-explorer
+    spec:
+      volumes:
+      - name: env-config
+        configMap:
+          name: env-config
+          items:
+          - key: env-config.js
+            path: env-config.js
+      containers:
+      - name: uni-arts-explorer
+        resources:
+          requests:
+            memory: "2048Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2048Mi"
+            cpu: "1000m"
+        image: registry.cn-hongkong.aliyuncs.com/tatmas/uni-arts-explorer
+        command: ["nginx", "-g", "daemon off;"]
+        volumeMounts:
+        - name: env-config
+          mountPath: /usr/share/nginx/html/env-config.js
+          subPath: env-config.js
+        ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uni-arts-explorer
+spec:
+  ports:
+  - name: port
+    port: 80
+    targetPort: 80  
+  selector:
+    app: uni-arts-explorer          
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-uni-arts-explorer
+  annotations:
+    #nginx.org/websocket-services: "ws-explorer"
+    #nginx.ingress.kubernetes.io/auth-method: 'POST'
+    nginx.ingress.kubernetes.io/whitelist-source-range: 0.0.0.0/0
+spec: 
+  tls:
+  - hosts:
+    - explorer.uniarts.me
+    secretName: uniarts-explorer-tls
+  rules:
+  - host: explorer.uniarts.me
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: uni-arts-explorer
+          servicePort: 80           
