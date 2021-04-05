@@ -38,6 +38,7 @@ import nodeDataHighway from './nodes/datahighway.png';
 import nodeDockMainnet from './nodes/dock-mainnet.png';
 import nodeDockTestnet from './nodes/dock-testnet.png';
 import nodeDotMog from './nodes/dotmog.svg';
+import nodeEave from './nodes/eave.svg';
 import nodeEdgeware from './nodes/edgeware-circle.svg';
 import nodeEncointerNotee from './nodes/encointer-notee.svg';
 import nodeEncointerTeeproxy from './nodes/encointer-teeproxy.svg';
@@ -95,6 +96,7 @@ export const chainLogos: Record<string, unknown> = [
   ['Darwinia PC2', nodeDarwinia],
   ['DataHighway', nodeDataHighway],
   ['Dusty', chainDusty],
+  ['Steam PC', nodeEave],
   ['Galital', nodeGalital],
   ['Galois', nodeMath],
   ['HydraDX Hydrate', chainHydrate],
@@ -170,6 +172,7 @@ export const nodeLogos: Record<string, unknown> = [
   ['DataHighway Parachain Collator', nodeDataHighway],
   ['Dock Full Node', nodeDockMainnet],
   ['DOTMog Node', nodeDotMog],
+  ['Eave Node', nodeEave],
   ['Edgeware Node', nodeEdgeware],
   ['Encointer Node', nodeEncointerNotee],
   ['Encointer Node noTEE', nodeEncointerNotee],
@@ -252,6 +255,7 @@ export const namedLogos: Record<string, unknown> = {
   'dock-testnet': nodeDockTestnet,
   dotmog: nodeDotMog,
   dusty: chainDusty,
+  eave: nodeEave,
   edgeware: nodeEdgeware,
   empty: emptyLogo,
   encointer_cantillon: nodeEncointerTeeproxy,
@@ -289,6 +293,7 @@ export const namedLogos: Record<string, unknown> = {
   rococoCrust: nodeCrust,
   rococoDarwinia: nodeDarwinia,
   rococoDataHighway: nodeDataHighway,
+  rococoEave: nodeEave,
   rococoEncointer: nodeEncointerNotee,
   rococoEquilibrium: nodeEquilibrium,
   rococoGalital: nodeGalital,

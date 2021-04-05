@@ -3,7 +3,7 @@
   "repository": "https://github.com/polkadot-js/apps",
   "description": "An Apps portal into the Polkadot network",
   "author": "Jaco Greeff <jacogr@gmail.com>",
-  "version": "0.86.3-38",
+  "version": "0.86.3-39",
   "license": "Apache-2",
   "private": true,
   "homepage": ".",
