@@ -238,7 +238,6 @@ export const nodeLogos: Record<string, unknown> = [
 // (Generally would be the 'network' key in the known ss58 as per
 // https://github.com/polkadot-js/common/blob/master/packages/networks/src/index.ts)
 export const namedLogos: Record<string, unknown> = {
-  'Uni-arts Node': nodeUniarts,
   acala: nodeAcala,
   alexander: nodePolkadot,
   bifrost: nodeBifrost,
