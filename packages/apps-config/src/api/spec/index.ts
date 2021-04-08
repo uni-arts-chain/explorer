@@ -59,7 +59,7 @@ import soraSubstrate from './soraSubstrate';
 import stafi from './stafi';
 import subdao from './subdao';
 import subsocial from './subsocial';
-import uart from './uart';
+import uart from './uniarts';
 import unique from './unique';
 import vln from './vln';
 import zenlink from './zenlink';
@@ -137,7 +137,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   stafi,
   subdao,
   subsocial,
-  uart,
+  uart
 };
 
 export default spec;

@@ -3054,6 +3054,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@polkadot/x-fetch@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "@polkadot/x-fetch@npm:3.7.1"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    "@types/node-fetch": ^2.5.7
+    node-fetch: ^2.6.1
+  checksum: a3cff72f1ee1b78ed9a970b4d245e0c6e540e3f0a10b9cf844a2a4f5c0439a3bd26bb2a13226add9645b26b82ce2f8be435b36a2e1c6343cb2d7de47b34bb1ad
+  languageName: node
+  linkType: hard
+
 "@polkadot/x-fetch@npm:^6.0.5":
   version: 6.0.5
   resolution: "@polkadot/x-fetch@npm:6.0.5"
@@ -3686,6 +3697,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node-fetch@npm:^2.5.7":
+  version: 2.5.10
+  resolution: "@types/node-fetch@npm:2.5.10"
+  dependencies:
+    "@types/node": "*"
+    form-data: ^3.0.0
+  checksum: 7687038f73cf0f2e4bac8ced3abdfbb77f8b2719de2f180d0064238d7460c8b4dc0b39c08da35a76d7db9f86528599ea0f7cee7c468ad7cfecfe2db1c5863641
+  languageName: node
+  linkType: hard
+
 "@types/node-fetch@npm:^2.5.8":
   version: 2.5.8
   resolution: "@types/node-fetch@npm:2.5.8"
@@ -4106,6 +4127,16 @@ __metadata:
   checksum: d9cf3501ae69796850dcdadde7fdaa1f3fc27d54a380396cc6b67706f7d6329b0c35db9b23d96c83a4196a915681129fa6b324383fcee88f413e06f7d05edf16
   languageName: node
   linkType: hard
+
+"@uniarts/networks@workspace:packages/apps-networks":
+  version: 0.0.0-use.local
+  resolution: "@uniarts/networks@workspace:packages/apps-networks"
+  dependencies:
+    "@babel/runtime": ^7.12.1
+    "@polkadot/util": ^3.7.1
+    "@polkadot/x-fetch": ^3.7.1
+  languageName: unknown
+  linkType: soft
 
 "@vue/component-compiler-utils@npm:^3.2.0":
   version: 3.2.0

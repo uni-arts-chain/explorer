@@ -20,9 +20,10 @@ export function createProduction (t: TFunction): LinkOption[] {
     {
       dnslink: 'uniarts',
       info: 'uniarts',
-      text: t('rpc.uniarts', 'Uni-Arts', { ns: 'apps-config' }),
-      textBy: t('rpc.hosted.by', 'hosted by {{host}}', { ns: 'apps-config', replace: { host: 'Uni-Arts' } }),
-      value: 'wss://testnet.uniarts.me'
+      text: t('rpc.uniarts', 'Uniarts', { ns: 'apps-config' }),
+      providers: {
+        Uniarts: 'wss://testnet.uniarts.me'
+      }
     },
     {
       dnslink: 'polkadot',
