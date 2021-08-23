@@ -407,7 +407,7 @@ export function createTesting (t: TFunction, firstOnly?: boolean): LinkOption[] 
     },
     {
       info: 'uniarts',
-      isUnreachable: true,
+      // isUnreachable: true,
       text: t('rpc.test.uniarts', 'UniArts', { ns: 'apps-config' }),
       providers: {
         UniArts: 'wss://testnet.uniarts.network'
